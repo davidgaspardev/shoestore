@@ -22,4 +22,10 @@
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome" />
 
+    <fragment
+        android:id="@+id/instructionFragment"
+        android:name="com.udacity.shoestore.screens.instruction.InstructionFragment"
+        android:label="fragment_instruction"
+        tools:layout="@layout/fragment_instruction" />
+
 </navigation>
