@@ -27,12 +27,11 @@ class WelcomeFragment : Fragment() {
         return binding.root
     }
 
-    private fun bindingInflater(inflater: LayoutInflater, container: ViewGroup?): FragmentWelcomeBinding {
-        return DataBindingUtil.inflate(
+    private fun bindingInflater(inflater: LayoutInflater, container: ViewGroup?)
+        = DataBindingUtil.inflate<FragmentWelcomeBinding>(
             inflater,
             R.layout.fragment_welcome,
             container,
             false
         )
-    }
 }

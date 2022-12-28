@@ -26,12 +26,11 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
-    private  fun bindingInflater(inflater: LayoutInflater, container: ViewGroup?): FragmentLoginBinding {
-        return DataBindingUtil.inflate(
+    private fun bindingInflater(inflater: LayoutInflater, container: ViewGroup?)
+        = DataBindingUtil.inflate<FragmentLoginBinding>(
             inflater,
             R.layout.fragment_login,
             container,
             false
         )
-    }
 }
