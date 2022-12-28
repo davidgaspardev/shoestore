@@ -16,7 +16,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        val binding: FragmentLoginBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+        val binding = bindingInflater(inflater, container)
 
         binding.createButton.setOnClickListener {
             val action = LoginFragmentDirections.actionWelcome()
@@ -24,5 +24,14 @@ class LoginFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    private  fun bindingInflater(inflater: LayoutInflater, container: ViewGroup?): FragmentLoginBinding {
+        return DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_login,
+            container,
+            false
+        )
     }
 }
