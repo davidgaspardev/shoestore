@@ -62,7 +62,7 @@
                     android:text="@string/create"/>
 
                 <TextView
-                    android:id="@+id/existsAccountLink"
+                    android:id="@+id/linkExistsAccount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/exists_account"

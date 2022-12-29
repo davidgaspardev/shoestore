@@ -23,6 +23,11 @@ class LoginFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+        binding.linkExistsAccount.setOnClickListener {
+            val action = LoginFragmentDirections.actionWelcome()
+            findNavController().navigate(action)
+        }
+
         return binding.root
     }
 
