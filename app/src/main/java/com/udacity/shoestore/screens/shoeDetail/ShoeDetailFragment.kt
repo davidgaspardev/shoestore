@@ -7,11 +7,13 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.models.Shoe
+import com.udacity.shoestore.models.ShoeListViewModel
 import timber.log.Timber
 
 class ShoeDetailFragment: Fragment() {
@@ -22,6 +24,8 @@ class ShoeDetailFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding = bindingInflater(inflater, container)
+
+        val shoeListViewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
 
         binding.buttonCancelShoe.setOnClickListener {
             findNavController().popBackStack()
@@ -39,6 +43,7 @@ class ShoeDetailFragment: Fragment() {
                 }
 
                 val shoe = Shoe(shoeName, shoeSize.toDouble(), company, description)
+                shoeListViewModel.addShoe(shoe)
 
                 val action = ShoeDetailFragmentDirections.actionBackToShoeList()
                 findNavController().navigate(action)
