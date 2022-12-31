@@ -9,4 +9,13 @@
     <string name="see_instruction"><u>See instruction</u></string>
     <string name="add_shoe">Add shoe</string>
     <string name="shoe_list">Shoe list</string>
+    <string name="shoe_name">Shoe name</string>
+    <string name="type_shoe_name_here">Type shoe name here</string>
+    <string name="company">Company</string>
+    <string name="type_the_company_here">Type the company here</string>
+    <string name="shoe_size">Shoe size</string>
+    <string name="type_shoe_size_here">Type shoe size here</string>
+    <string name="description">Description</string>
+    <string name="type_the_description_here">Type the description here</string>
+    <string name="register_shoe">Register Shoe</string>
 </resources>
