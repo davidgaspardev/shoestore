@@ -8,10 +8,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.udacity.shoestore.MainActivity
 
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
-import com.udacity.shoestore.models.ShoeListViewModel
 
 class ShoeListFragment : Fragment() {
 
@@ -28,9 +28,10 @@ class ShoeListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding = bindingInflater(inflater, container)
-        val shoeListViewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
+        // Get ViewModel from activity (parent)
+        val viewModel = (activity as MainActivity).activityViewModel;
 
-        shoeListViewModel.shoeList.observe(viewLifecycleOwner, Observer {
+        viewModel.shoeList.observe(viewLifecycleOwner, Observer {
             Toast.makeText(context, "shoe list changed: ${it.size}", Toast.LENGTH_SHORT).show()
         })
 
