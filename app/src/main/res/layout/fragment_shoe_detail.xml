@@ -5,10 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".screens.shoeDetail.ShoeDetailFragment">
 
+    <!-- Used to add an item (ViewGroup) to the center of the screen -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!-- Used to group and vertically align Views -->
         <LinearLayout
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -26,6 +28,7 @@
                 android:textSize="24sp"
                 android:textStyle="bold"/>
 
+            <!-- Used to add margin in a set of aligned views -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -100,6 +103,7 @@
 
             </LinearLayout>
 
+            <!-- Used to change the orientation of aligned views -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

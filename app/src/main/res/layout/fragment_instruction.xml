@@ -5,10 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".screens.instruction.InstructionFragment">
 
+    <!-- Used to add an item (ViewGroup) to the center of the screen, and position a button relative to that item -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!-- Used to group and vertically align Views -->
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="wrap_content"

@@ -5,10 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".screens.welcome.WelcomeFragment">
 
+    <!-- Used to add items (ViewGroup) to the center of the screen -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!-- Used to group and vertically align Views -->
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
