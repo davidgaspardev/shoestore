@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">ShoeStore</string>
     <string name="password">Password</string>
-    <string name="password_hint">********</string>
-    <string name="email_hint">user@you.com</string>
+    <string name="password_hint">Type your password here</string>
+    <string name="email_hint">Type your e-mail here</string>
     <string name="email">E-mail</string>
     <string name="create">Create</string>
     <string name="exists_account"><u>already have a account</u></string>
@@ -21,4 +21,10 @@
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="logout">Logout</string>
+    <string name="welcome_to_shoe_store">Welcome to Shoe Store</string>
+    <string name="the_best_place_for_your_foot_to_be_fashionable">The best place for your foot to be fashionable.</string>
+    <string name="shoestore_is_app_to_buy_shoes_online">ShoeStore is app to buy shoes online</string>
+    <string name="the_user_will_have_access_to_a_list_of_shoes">The user will have access to a list of shoes.</string>
+    <string name="the_user_could_select_a_shoe_to_see_its_details">The user could select a shoe to see its details.</string>
+    <string name="open_shoe_list">Open Shoe list</string>
 </resources>

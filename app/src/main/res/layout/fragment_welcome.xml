@@ -22,12 +22,15 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Welcome to Shoe Store" />
+                android:text="@string/welcome_to_shoe_store"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="The best place for your foot to be fashionable." />
+                android:text="@string/the_best_place_for_your_foot_to_be_fashionable" />
 
         </LinearLayout>
 

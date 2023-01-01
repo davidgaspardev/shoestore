@@ -77,7 +77,7 @@
                     android:layout_marginBottom="6dp"
                     android:background="@android:color/transparent"
                     android:hint="@string/type_shoe_size_here"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:importantForAutofill="no"
                     tools:targetApi="o" />
 

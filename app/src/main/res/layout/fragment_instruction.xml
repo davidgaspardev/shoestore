@@ -22,17 +22,22 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ShoeStore is app to buy shoes online" />
+                android:text="@string/shoestore_is_app_to_buy_shoes_online"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="The user will have access to a list of shoes." />
+                android:layout_marginStart="8dp"
+                android:text="@string/the_user_will_have_access_to_a_list_of_shoes" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="The user could select a shoe to see its details." />
+                android:layout_marginStart="8dp"
+                android:text="@string/the_user_could_select_a_shoe_to_see_its_details" />
 
         </LinearLayout>
 
@@ -41,7 +46,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Open Shoe list"
+            android:text="@string/open_shoe_list"
+            style="?android:attr/buttonBarButtonStyle"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
             app:layout_constraintStart_toStartOf="@+id/linearLayout2"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
