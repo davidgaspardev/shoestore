@@ -6,6 +6,9 @@ import androidx.lifecycle.ViewModel
 
 class ActivityViewModel: ViewModel() {
 
+    val email = MutableLiveData<String>()
+    val password = MutableLiveData<String>()
+
     private val _shoeList = MutableLiveData<MutableList<Shoe>>()
     val shoeList: LiveData<MutableList<Shoe>>
         get() = _shoeList

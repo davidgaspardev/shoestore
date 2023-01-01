@@ -5,6 +5,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".screens.login.LoginFragment">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.models.ActivityViewModel" />
+    </data>
+
     <!-- Used to add an item (ViewGroup) to the center of the screen, and position a link in the screen -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -34,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:ems="16"
                 android:hint="@string/email_hint"
+                android:text="@={viewModel.email}"
                 android:inputType="textEmailAddress"
                 android:background="@android:color/transparent"
                 android:minHeight="48dp" />
@@ -52,6 +59,7 @@
                 android:inputType="textPassword"
                 android:minHeight="48dp"
                 android:background="@android:color/transparent"
+                android:text="@={viewModel.password}"
                 android:hint="@string/password_hint"/>
 
             <Button
