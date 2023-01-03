@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.MainActivity
 
@@ -25,39 +27,25 @@ class ShoeDetailFragment: Fragment() {
         val binding = bindingInflater(inflater, container)
 
         // Get ViewModel from activity (parent)
-        val viewModel = (activity as MainActivity).activityViewModel;
+        val viewModel = (activity as MainActivity).activityViewModel
+        val shoeDetailViewModelFactory = ShoeDetailViewModelFactory(viewModel)
+        val shoeDetailViewModel = ViewModelProvider(this, shoeDetailViewModelFactory)
+            .get(ShoeDetailViewModel::class.java)
 
-        binding.buttonCancelShoe.setOnClickListener {
-            findNavController().popBackStack()
-        }
+        binding.shoeDetailViewModel = shoeDetailViewModel
 
-        binding.buttonSaveShoe.setOnClickListener {
-            try {
-                val shoeName = binding.editTextShoeName.text.toString()
-                val company = binding.editTextCompany.text.toString()
-                val shoeSize = binding.editTextShoeSize.text.toString()
-                val description = binding.editTextDescription.text.toString()
+        shoeDetailViewModel.onBack.observe(viewLifecycleOwner, Observer { back ->
+            if (back) findNavController().popBackStack()
+        })
 
-                if (shoeName.isEmpty() || company.isEmpty() || shoeSize.isEmpty() || description.isEmpty()) {
-                    throw Exception("please fill in all fields")
-                }
-
-                val shoe = Shoe(shoeName, shoeSize.toDouble(), company, description)
-                viewModel.addShoe(shoe)
-
-                val action = ShoeDetailFragmentDirections.actionBackToShoeList()
-                findNavController().navigate(action)
-            } catch (err: Exception) {
-                Timber.e(err)
-
-                alertInfo(err.message ?: err.toString())
-            }
-        }
+        shoeDetailViewModel.onMessage.observe(viewLifecycleOwner, Observer { message ->
+            if(message.isNotEmpty()) showMessage(message)
+        })
 
         return binding.root
     }
 
-    private fun alertInfo(info: String) {
+    private fun showMessage(info: String) {
         Toast.makeText(context, info, Toast.LENGTH_SHORT).show()
     }
 

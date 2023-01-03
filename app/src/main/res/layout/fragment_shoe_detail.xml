@@ -5,6 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".screens.shoeDetail.ShoeDetailFragment">
 
+    <data>
+        <variable
+            name="shoeDetailViewModel"
+            type="com.udacity.shoestore.screens.shoeDetail.ShoeDetailViewModel" />
+    </data>
+
     <!-- Used to add an item (ViewGroup) to the center of the screen -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -48,6 +54,7 @@
                     android:background="@android:color/transparent"
                     android:layout_marginBottom="6dp"
                     android:hint="@string/type_shoe_name_here"
+                    android:text="@={shoeDetailViewModel.fieldName}"
                     android:inputType="text"
                     android:importantForAutofill="no"
                     tools:targetApi="o"/>
@@ -64,6 +71,7 @@
                     android:background="@android:color/transparent"
                     android:layout_marginBottom="6dp"
                     android:hint="@string/type_the_company_here"
+                    android:text="@={shoeDetailViewModel.fieldCompany}"
                     android:inputType="text"
                     android:importantForAutofill="no"
                     tools:targetApi="o"/>
@@ -80,6 +88,7 @@
                     android:layout_marginBottom="6dp"
                     android:background="@android:color/transparent"
                     android:hint="@string/type_shoe_size_here"
+                    android:text="@={shoeDetailViewModel.fieldSize}"
                     android:inputType="numberDecimal"
                     android:importantForAutofill="no"
                     tools:targetApi="o" />
@@ -97,6 +106,7 @@
                     android:background="@android:color/transparent"
                     android:layout_marginBottom="6dp"
                     android:hint="@string/type_the_description_here"
+                    android:text="@={shoeDetailViewModel.fieldDescription}"
                     android:inputType="text"
                     android:importantForAutofill="no"
                     tools:targetApi="o"/>
@@ -115,6 +125,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/save"
+                    android:onClick="@{() -> shoeDetailViewModel.toSave()}"
                     style="?android:attr/buttonBarButtonStyle" />
 
                 <Button
@@ -123,6 +134,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/cancel"
+                    android:onClick="@{() -> shoeDetailViewModel.toBack()}"
                     style="?android:attr/buttonBarButtonStyle" />
 
             </LinearLayout>
