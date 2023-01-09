@@ -24,7 +24,7 @@ class ShoeDetailFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = bindingInflater(inflater, container)
+        val binding = FragmentShoeDetailBinding.inflate(inflater, container, false)
 
         // Get ViewModel from activity (parent)
         val viewModel = (activity as MainActivity).activityViewModel
@@ -48,12 +48,4 @@ class ShoeDetailFragment: Fragment() {
     private fun showMessage(info: String) {
         Toast.makeText(context, info, Toast.LENGTH_SHORT).show()
     }
-
-    private fun bindingInflater(inflater: LayoutInflater, container: ViewGroup?)
-        = DataBindingUtil.inflate<FragmentShoeDetailBinding>(
-            inflater,
-            R.layout.fragment_shoe_detail,
-            container,
-            false
-        )
 }

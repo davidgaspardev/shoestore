@@ -29,7 +29,7 @@ class ShoeListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = bindingInflater(inflater, container)
+        val binding = FragmentShoeListBinding.inflate(inflater, container, false)
         // Get ViewModel from activity (parent)
         val viewModel = (activity as MainActivity).activityViewModel;
 
@@ -77,12 +77,4 @@ class ShoeListFragment : Fragment() {
         }
         return super.onOptionsItemSelected(item)
     }
-
-    private fun bindingInflater(inflater: LayoutInflater, container: ViewGroup?)
-        = DataBindingUtil.inflate<FragmentShoeListBinding>(
-            inflater,
-            R.layout.fragment_shoe_list,
-            container,
-            false
-        )
 }

@@ -12,11 +12,12 @@ import com.udacity.shoestore.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        val binding = bindingInflater(inflater, container)
+        val binding = FragmentLoginBinding.inflate(inflater, container, false)
 
         binding.createButton.setOnClickListener {
             val action = LoginFragmentDirections.actionWelcome()
@@ -30,12 +31,4 @@ class LoginFragment : Fragment() {
 
         return binding.root
     }
-
-    private fun bindingInflater(inflater: LayoutInflater, container: ViewGroup?)
-        = DataBindingUtil.inflate<FragmentLoginBinding>(
-            inflater,
-            R.layout.fragment_login,
-            container,
-            false
-        )
 }

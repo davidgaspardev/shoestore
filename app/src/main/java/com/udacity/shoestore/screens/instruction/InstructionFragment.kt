@@ -12,11 +12,12 @@ import com.udacity.shoestore.databinding.FragmentInstructionBinding
 
 class InstructionFragment : Fragment() {
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        val binding =  bindingInflater(inflater, container)
+        val binding =  FragmentInstructionBinding.inflate(inflater, container, false)
 
         binding.buttonShoeList.setOnClickListener {
             val action = InstructionFragmentDirections.actionShoeList()
@@ -25,12 +26,4 @@ class InstructionFragment : Fragment() {
 
         return binding.root
     }
-
-    private fun bindingInflater(inflater: LayoutInflater, container: ViewGroup?)
-        = DataBindingUtil.inflate<FragmentInstructionBinding>(
-            inflater,
-            R.layout.fragment_instruction,
-            container,
-            false
-        )
 }
