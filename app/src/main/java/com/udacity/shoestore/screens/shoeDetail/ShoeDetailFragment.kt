@@ -6,18 +6,13 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.udacity.shoestore.MainActivity
 
-import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.models.ActivityViewModel
-import com.udacity.shoestore.models.Shoe
-import timber.log.Timber
 
 class ShoeDetailFragment: Fragment() {
 
