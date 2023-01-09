@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -14,6 +15,7 @@ import com.udacity.shoestore.MainActivity
 
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
+import com.udacity.shoestore.models.ActivityViewModel
 import com.udacity.shoestore.models.Shoe
 import timber.log.Timber
 
@@ -27,7 +29,7 @@ class ShoeDetailFragment: Fragment() {
         val binding = FragmentShoeDetailBinding.inflate(inflater, container, false)
 
         // Get ViewModel from activity (parent)
-        val viewModel = (activity as MainActivity).activityViewModel
+        val viewModel by activityViewModels<ActivityViewModel>()
         val shoeDetailViewModelFactory = ShoeDetailViewModelFactory(viewModel)
         val shoeDetailViewModel = ViewModelProvider(this, shoeDetailViewModelFactory)
             .get(ShoeDetailViewModel::class.java)
